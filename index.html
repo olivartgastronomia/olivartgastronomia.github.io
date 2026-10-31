@@ -7,6 +7,7 @@
 <meta name="description" content="Buffet para casamentos, aniversários e eventos corporativos em São Paulo, Alphaville, Porto Feliz e litoral paulista. Coffee break, festa de pizza, buffet por ilhas e cardápios personalizados do Chef Gil Oliveira.">
 <meta property="og:title" content="Oliv'art Gastronomia">
 <meta property="og:description" content="Eventos com qualidade e sabor. Buffet, coffee break, festa de pizza e cardápios personalizados.">
+<meta property="og:image" content="https://olivartgastronomia.github.io/img/mesa-ilhas.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%234f5a2f'/%3E%3Cellipse cx='32' cy='38' rx='11' ry='14' fill='%23f8f4ec'/%3E%3Cpath d='M32 24c-2-8 3-14 10-15-1 7-4 12-10 15z' fill='%23b08d57'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +39,7 @@
   .brand, nav { white-space: nowrap; }
   nav a { text-decoration: none; margin-left: 22px; font-size: .92rem; color: var(--muted); }
   nav a:hover { color: var(--olive); }
-  @media (max-width: 900px) { .brand span { display: none; } }
+  @media (max-width: 960px) { .brand span, nav .opt-lg { display: none; } nav a { margin-left: 16px; } }
   @media (max-width: 720px) { nav .opt { display: none; } }
 
   .btn { display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: .95rem; transition: transform .15s, background .15s; }
@@ -49,7 +50,14 @@
   nav .btn { margin-left: 22px; padding: 9px 18px; color: #fff; }
 
   /* Hero */
-  .hero { background: linear-gradient(160deg, var(--olive-dark), var(--olive)); color: var(--cream); padding: 110px 0 100px; text-align: center; }
+  .hero { background: linear-gradient(160deg, rgba(47,54,25,.88), rgba(79,90,47,.78)), url("img/charcutaria.jpg") center/cover; color: var(--cream); padding: 120px 0 110px; text-align: center; }
+
+  /* Galeria */
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .gallery figure { margin: 0; border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 5; background: var(--cream); }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+  .gallery figure:hover img { transform: scale(1.04); }
+  @media (max-width: 520px) { .gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; } }
   .hero .eyebrow { letter-spacing: .3em; text-transform: uppercase; font-size: .78rem; color: var(--gold); }
   .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 18px 0; }
   .hero p { max-width: 620px; margin: 0 auto 34px; font-size: 1.08rem; opacity: .9; }
@@ -126,8 +134,9 @@
     <nav>
       <a class="opt" href="#servicos">Serviços</a>
       <a class="opt" href="#cardapios">Cardápios</a>
+      <a class="opt" href="#eventos">Eventos</a>
       <a class="opt" href="#natal">Natal 2026</a>
-      <a class="opt" href="#como-funciona">Como funciona</a>
+      <a class="opt opt-lg" href="#como-funciona">Como funciona</a>
       <a class="btn btn-whats" href="https://wa.me/5511953997788?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Orçamento</a>
     </nav>
   </div>
@@ -387,6 +396,31 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="eventos">
+  <div class="wrap">
+    <div class="title">
+      <small>Nossos eventos</small>
+      <h2>Mesas que viram assunto</h2>
+      <p>Fotos reais de eventos da Oliv'art: ilhas gastronômicas, frios selecionados e sobremesas da casa.</p>
+    </div>
+    <div class="gallery">
+      <figure><img src="img/mesa-ilhas.jpg" alt="Mesa de ilhas gastronômicas montada em evento" loading="lazy"></figure>
+      <figure><img src="img/tabua-frios.jpg" alt="Tábua de frios, queijos e frutas" loading="lazy"></figure>
+      <figure><img src="img/carpaccio.jpg" alt="Carpaccio com rúcula e parmesão" loading="lazy"></figure>
+      <figure><img src="img/tomates-burrata.jpg" alt="Burrata com tomates frescos e manjericão" loading="lazy"></figure>
+      <figure><img src="img/pavlovas.jpg" alt="Pavlovas com frutas vermelhas" loading="lazy"></figure>
+      <figure><img src="img/brie-folhado.jpg" alt="Brie folhado com frutas vermelhas e mel" loading="lazy"></figure>
+      <figure><img src="img/focaccia-flores.jpg" alt="Focaccia com frutas e flores comestíveis" loading="lazy"></figure>
+      <figure><img src="img/painel-floral.jpg" alt="Painel decorativo com flores comestíveis" loading="lazy"></figure>
+      <figure><img src="img/frios-uvas.jpg" alt="Ilha de frios com uvas, queijos e rosbife" loading="lazy"></figure>
+      <figure><img src="img/mesa-paineis.jpg" alt="Mesa de evento com painéis florais" loading="lazy"></figure>
+      <figure><img src="img/tomates-manjericao.jpg" alt="Tomates italianos com manjericão fresco" loading="lazy"></figure>
+      <figure><img src="img/mesa-frios-carpaccio.jpg" alt="Mesa com frios e carpaccio" loading="lazy"></figure>
+    </div>
+    <p class="note"><a href="https://instagram.com/olivartgastronomia" target="_blank" rel="noopener">Veja mais no Instagram @olivartgastronomia</a></p>
   </div>
 </section>
 

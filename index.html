@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oliv'art Gastronomia | Buffet e eventos em São Paulo</title>
+<meta name="description" content="Buffet para casamentos, aniversários e eventos corporativos em São Paulo, Alphaville, Porto Feliz e litoral paulista. Coffee break, festa de pizza, buffet por ilhas e cardápios personalizados do Chef Gil Oliveira.">
+<meta property="og:title" content="Oliv'art Gastronomia">
+<meta property="og:description" content="Eventos com qualidade e sabor. Buffet, coffee break, festa de pizza e cardápios personalizados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive: #4f5a2f;
+    --olive-dark: #2f3619;
+    --gold: #b08d57;
+    --cream: #f8f4ec;
+    --paper: #fffdf8;
+    --ink: #2a2a24;
+    --muted: #6b6a5e;
+    --line: #e6dfcf;
+    --whats: #1f9d55;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
+  h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; line-height: 1.15; }
+  a { color: inherit; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* Topo */
+  header { position: sticky; top: 0; z-index: 10; background: rgba(255,253,248,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-family: "Cormorant Garamond", serif; font-size: 1.6rem; font-weight: 600; color: var(--olive-dark); text-decoration: none; }
+  .brand span { color: var(--gold); font-weight: 500; font-size: .95rem; letter-spacing: .25em; text-transform: uppercase; margin-left: 6px; }
+  nav a { text-decoration: none; margin-left: 22px; font-size: .92rem; color: var(--muted); }
+  nav a:hover { color: var(--olive); }
+  @media (max-width: 720px) { nav .opt { display: none; } .brand span { display: none; } }
+
+  .btn { display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: .95rem; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-whats { background: var(--whats); color: #fff; }
+  .btn-whats:hover { background: #188547; }
+  .btn-line { border: 1.5px solid var(--olive); color: var(--olive); }
+  nav .btn { margin-left: 22px; padding: 9px 18px; color: #fff; }
+
+  /* Hero */
+  .hero { background: linear-gradient(160deg, var(--olive-dark), var(--olive)); color: var(--cream); padding: 110px 0 100px; text-align: center; }
+  .hero .eyebrow { letter-spacing: .3em; text-transform: uppercase; font-size: .78rem; color: var(--gold); }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 18px 0; }
+  .hero p { max-width: 620px; margin: 0 auto 34px; font-size: 1.08rem; opacity: .9; }
+  .hero .btn-line { border-color: var(--cream); color: var(--cream); margin-left: 10px; }
+  @media (max-width: 520px) { .hero .btn-line { margin: 12px 0 0; } }
+
+  section { padding: 90px 0; }
+  .title { text-align: center; margin-bottom: 50px; }
+  .title small { letter-spacing: .3em; text-transform: uppercase; font-size: .75rem; color: var(--gold); }
+  .title h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--olive-dark); margin-top: 8px; }
+  .title p { color: var(--muted); max-width: 600px; margin: 12px auto 0; }
+
+  /* Serviços */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 30px 26px; display: flex; flex-direction: column; }
+  .card h3 { font-size: 1.6rem; color: var(--olive-dark); }
+  .card p { color: var(--muted); font-size: .95rem; margin: 10px 0 20px; flex: 1; }
+  .price { font-size: .85rem; color: var(--muted); }
+  .price strong { display: block; font-family: "Cormorant Garamond", serif; font-size: 1.9rem; color: var(--gold); font-weight: 600; }
+  .note { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 26px; }
+
+  /* Cardápios */
+  .menus { background: var(--cream); }
+  .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+  .menu { background: var(--paper); border-radius: 14px; padding: 36px 32px; border: 1px solid var(--line); }
+  .menu h3 { font-size: 1.9rem; color: var(--olive-dark); text-align: center; }
+  .menu .sub { text-align: center; color: var(--gold); letter-spacing: .2em; text-transform: uppercase; font-size: .72rem; margin-bottom: 22px; }
+  .menu h4 { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--olive); margin: 20px 0 6px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  .menu ul { list-style: none; color: var(--muted); font-size: .93rem; }
+  .menu li { padding: 3px 0; }
+
+  /* Como funciona */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; counter-reset: s; }
+  .step { text-align: center; padding: 10px; }
+  .step::before { counter-increment: s; content: counter(s); display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--olive); color: var(--cream); font-family: "Cormorant Garamond", serif; font-size: 1.4rem; margin-bottom: 14px; }
+  .step h3 { font-size: 1.35rem; color: var(--olive-dark); }
+  .step p { color: var(--muted); font-size: .92rem; }
+
+  /* Regiões */
+  .regions { background: var(--olive-dark); color: var(--cream); text-align: center; padding: 70px 0; }
+  .regions h2 { font-size: 2.2rem; margin-bottom: 18px; }
+  .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .chips span { border: 1px solid rgba(248,244,236,.35); border-radius: 999px; padding: 7px 16px; font-size: .9rem; }
+
+  /* Contato */
+  .contact { text-align: center; }
+  .contact .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 26px; }
+
+  footer { border-top: 1px solid var(--line); padding: 30px 0; text-align: center; color: var(--muted); font-size: .85rem; }
+
+  .float { position: fixed; right: 18px; bottom: 18px; width: 58px; height: 58px; border-radius: 50%; background: var(--whats); display: grid; place-items: center; box-shadow: 0 6px 18px rgba(0,0,0,.2); z-index: 20; }
+  .float svg { width: 30px; height: 30px; fill: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#">Oliv'art <span>Gastronomia</span></a>
+    <nav>
+      <a class="opt" href="#servicos">Serviços</a>
+      <a class="opt" href="#cardapios">Cardápios</a>
+      <a class="opt" href="#como-funciona">Como funciona</a>
+      <a class="btn btn-whats" href="https://wa.me/5511953997788?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Orçamento</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Eventos com qualidade e sabor</div>
+    <h1>Gastronomia que transforma<br>o seu evento em memória</h1>
+    <p>Buffet para casamentos, aniversários e eventos corporativos, com a assinatura do Chef executivo Gil Oliveira.</p>
+    <a class="btn btn-whats" href="https://wa.me/5511953997788?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+    <a class="btn btn-line" href="#cardapios">Ver cardápios</a>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="title">
+      <small>Serviços</small>
+      <h2>Um formato para cada celebração</h2>
+      <p>Do café da manhã da empresa ao jantar de casamento, cuidamos do cardápio, da produção e do serviço.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Coffee break</h3>
+        <p>Opções Clássica e Premium para reuniões, treinamentos e eventos corporativos.</p>
+        <div class="price">a partir de <strong>R$ 45</strong> por pessoa</div>
+      </div>
+      <div class="card">
+        <h3>Festa de pizza</h3>
+        <p>5 horas de serviço com 2 pizzaiolos, massa crocante e pizzas salgadas e doces.</p>
+        <div class="price">a partir de <strong>R$ 48</strong> por pessoa</div>
+      </div>
+      <div class="card">
+        <h3>Buffet por ilhas</h3>
+        <p>6 horas de serviço com ilhas gastronômicas para os convidados circularem e provarem de tudo.</p>
+        <div class="price">a partir de <strong>R$ 89</strong> por pessoa</div>
+      </div>
+      <div class="card">
+        <h3>Personalizado</h3>
+        <p>Jantares, casamentos e eventos especiais com cardápio criado pelo Chef para você.</p>
+        <div class="price">a partir de <strong>R$ 180</strong> por pessoa</div>
+      </div>
+    </div>
+    <p class="note">Valores por pessoa, como referência. O orçamento final depende do cardápio, do número de convidados e do local.</p>
+  </div>
+</section>
+
+<section id="cardapios" class="menus">
+  <div class="wrap">
+    <div class="title">
+      <small>Cardápios</small>
+      <h2>Um pouco do que servimos</h2>
+      <p>Exemplos de cardápios. Cada evento ganha um cardápio sob medida.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu">
+        <h3>Clássico Elegante</h3>
+        <div class="sub">Casamentos e celebrações</div>
+        <h4>Welcome drinks</h4>
+        <ul>
+          <li>Espumante brut com toque de hibisco</li>
+          <li>Suco detox de abacaxi, hortelã e gengibre</li>
+          <li>Mocktail de maracujá com espuma de limão siciliano</li>
+        </ul>
+        <h4>Ilha gastronômica</h4>
+        <ul>
+          <li>Tábua de queijos finos com mel e nozes</li>
+          <li>Charcutaria selecionada (parma, salame, copa)</li>
+          <li>Bruschettas variadas e mini quiches</li>
+        </ul>
+        <h4>Mini lanches</h4>
+        <ul>
+          <li>Mini brioche de pernil com molho barbecue</li>
+          <li>Croissant de peito de peru e queijo brie</li>
+          <li>Coxinha gourmet de costela desfiada</li>
+        </ul>
+        <h4>Doces</h4>
+        <ul>
+          <li>Mini tortinhas de limão siciliano</li>
+          <li>Brigadeiros gourmet (tradicional, pistache, maracujá)</li>
+          <li>Macarons sortidos</li>
+        </ul>
+      </div>
+      <div class="menu">
+        <h3>Sofisticado Contemporâneo</h3>
+        <div class="sub">Eventos especiais</div>
+        <h4>Welcome drinks</h4>
+        <ul>
+          <li>Espumante rosé com framboesa</li>
+          <li>Drink autoral de gin com butterfly pea flower</li>
+          <li>Chá gelado de pêssego com camomila</li>
+        </ul>
+        <h4>Ilha gastronômica</h4>
+        <ul>
+          <li>Ostras frescas com limão e pimenta rosa</li>
+          <li>Ceviche de peixe branco em colherzinha</li>
+          <li>Risoto de camarão em mini copinhos</li>
+        </ul>
+        <h4>Mini lanches</h4>
+        <ul>
+          <li>Mini brioche de short rib com cebola caramelizada</li>
+          <li>Mini hambúrguer artesanal (blend + cheddar)</li>
+          <li>Empadinha de camarão com catupiry</li>
+        </ul>
+        <h4>Doces</h4>
+        <ul>
+          <li>Torre de macarons sortidos</li>
+          <li>Mini pavlova de frutas vermelhas</li>
+          <li>Brownie com ganache de chocolate belga</li>
+        </ul>
+      </div>
+      <div class="menu">
+        <h3>Festa de Pizza</h3>
+        <div class="sub">Aniversários e confraternizações</div>
+        <h4>Salgadas</h4>
+        <ul>
+          <li>Mussarela</li>
+          <li>Calabresa</li>
+          <li>Portuguesa</li>
+          <li>4 Queijos</li>
+          <li>Marguerita</li>
+          <li>Atum</li>
+        </ul>
+        <h4>Doces</h4>
+        <ul>
+          <li>Banana com canela</li>
+          <li>Doce de leite caseiro</li>
+          <li>Brigadeiro gourmet</li>
+        </ul>
+        <h4>O serviço</h4>
+        <ul>
+          <li>Massa crocante e molho de tomate da nossa cozinha</li>
+          <li>5 horas de serviço com 2 pizzaiolos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="title">
+      <small>Como funciona</small>
+      <h2>Do primeiro contato ao grande dia</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Conte seu evento</h3><p>Data, número de convidados, local e o estilo que você imagina.</p></div>
+      <div class="step"><h3>Receba a proposta</h3><p>Montamos o cardápio e o orçamento sob medida.</p></div>
+      <div class="step"><h3>Reserve a data</h3><p>Contrato assinado e sinal de 50% via Pix garantem a sua data.</p></div>
+      <div class="step"><h3>Aproveite</h3><p>Nossa equipe cuida de tudo para você só celebrar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="regions">
+  <div class="wrap">
+    <h2>Onde atendemos</h2>
+    <div class="chips">
+      <span>Grande São Paulo</span>
+      <span>Alphaville</span>
+      <span>Porto Feliz</span>
+      <span>Riviera de São Lourenço</span>
+      <span>Litoral paulista</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap">
+    <div class="title">
+      <small>Contato</small>
+      <h2>Vamos planejar o seu evento?</h2>
+      <p>Fale com a gente e receba um orçamento personalizado.</p>
+    </div>
+    <div class="links">
+      <a class="btn btn-whats" href="https://wa.me/5511953997788?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">WhatsApp (11) 95399-7788</a>
+      <a class="btn btn-line" href="https://instagram.com/olivartgastronomia" target="_blank" rel="noopener">@olivartgastronomia</a>
+      <a class="btn btn-line" href="mailto:olivart.gastronomia@gmail.com">olivart.gastronomia@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Oliv'art Gastronomia · Chef executivo Gil Oliveira · São Paulo - SP</div>
+</footer>
+
+<a class="float" href="https://wa.me/5511953997788?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.26-.29.58-.36.77-.36h.55c.18 0 .42-.07.65.5.24.58.82 2.01.89 2.15.07.15.12.32.02.51-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38z"/></svg>
+</a>
+
+</body>
+</html>

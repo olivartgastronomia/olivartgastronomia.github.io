@@ -82,7 +82,12 @@
   .natal { background: linear-gradient(160deg, #5a1f1f, #7a2a24); color: var(--cream); }
   .natal .title h2, .natal .title p { color: var(--cream); }
   .natal .title p { opacity: .85; }
-  .xmas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  .xmas-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 22px; }
+.xmas-photos figure { margin: 0; position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 5; }
+.xmas-photos img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.xmas-photos figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 14px 12px; background: linear-gradient(transparent, rgba(40,12,12,.8)); font-family: "Cormorant Garamond", serif; font-size: 1.25rem; color: #e8c88f; }
+@media (max-width: 520px) { .xmas-photos { gap: 8px; } .xmas-photos figcaption { font-size: 1rem; padding: 20px 8px 8px; } }
+.xmas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
   .xmas { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: 12px; padding: 18px 20px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .xmas span { font-size: .95rem; }
   .xmas small { display: block; opacity: .7; font-size: .78rem; }
@@ -419,6 +424,14 @@
       <figure><img src="img/mesa-paineis.jpg" alt="Mesa de evento com painéis florais" loading="lazy"></figure>
       <figure><img src="img/tomates-manjericao.jpg" alt="Tomates italianos com manjericão fresco" loading="lazy"></figure>
       <figure><img src="img/mesa-frios-carpaccio.jpg" alt="Mesa com frios e carpaccio" loading="lazy"></figure>
+      <figure><img src="img/mesa-antepastos.jpg" alt="Mesa de antepastos com pastas, crudités e pães em salão de eventos" loading="lazy"></figure>
+      <figure><img src="img/parma-melao.jpg" alt="Presunto parma sobre lâminas de melão" loading="lazy"></figure>
+      <figure><img src="img/queijos-favo-mel.jpg" alt="Lascas de parmesão, favo de mel, uvas e tangerinas" loading="lazy"></figure>
+      <figure><img src="img/ceviche.jpg" alt="Ceviche de peixe servido sobre gelo" loading="lazy"></figure>
+      <figure><img src="img/mesa-pastas.jpg" alt="Mesa vista de cima com pastas, crudités, torradas e pães" loading="lazy"></figure>
+      <figure><img src="img/coalhada.jpg" alt="Coalhada com fio de azeite e hortelã" loading="lazy"></figure>
+      <figure><img src="img/torta-framboesa.jpg" alt="Torta de framboesas sobre farofa de pistache" loading="lazy"></figure>
+      <figure><img src="img/banoffee.jpg" alt="Banoffee em taça e torta de framboesa" loading="lazy"></figure>
     </div>
     <p class="note"><a href="https://instagram.com/olivartgastronomia" target="_blank" rel="noopener">Veja mais no Instagram @olivartgastronomia</a></p>
   </div>
@@ -430,6 +443,11 @@
       <small>Encomendas</small>
       <h2>Natal 2026 Oliv'art</h2>
       <p>Doces feitos na nossa cozinha, com receita da casa. Produção limitada: garanta o seu.</p>
+    </div>
+    <div class="xmas-photos">
+      <figure><img src="img/natal-guirlanda.jpg" alt="Guirlanda de Natal decorada com bombons, avelãs e laço vermelho" loading="lazy"><figcaption>Guirlanda</figcaption></figure>
+      <figure><img src="img/natal-chocotone.jpg" alt="Fatia de chocotone com recheio cremoso de chocolate" loading="lazy"><figcaption>Chocotone trufado</figcaption></figure>
+      <figure><img src="img/natal-arvore-madeleine.jpg" alt="Árvores de Natal montadas com madeleines e fitas" loading="lazy"><figcaption>Árvore de madeleine</figcaption></figure>
     </div>
     <div class="xmas-grid">
       <div class="xmas"><span>Guirlanda de Brownie<small>Ø 26 cm · 16 fatias</small></span><strong>R$ 286</strong></div>

@@ -8,7 +8,8 @@
 <meta property="og:title" content="Oliv'art Gastronomia">
 <meta property="og:description" content="Eventos com qualidade e sabor. Buffet, coffee break, festa de pizza e cardápios personalizados.">
 <meta property="og:image" content="https://olivartgastronomia.github.io/img/mesa-ilhas.jpg">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%234f5a2f'/%3E%3Cellipse cx='32' cy='38' rx='11' ry='14' fill='%23f8f4ec'/%3E%3Cpath d='M32 24c-2-8 3-14 10-15-1 7-4 12-10 15z' fill='%23b08d57'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/logo-olivart-icone.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -35,11 +36,15 @@
   header { position: sticky; top: 0; z-index: 10; background: rgba(255,253,248,.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
   header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
   .brand { font-family: "Cormorant Garamond", serif; font-size: 1.6rem; font-weight: 600; color: var(--olive-dark); text-decoration: none; }
-  .brand span { color: var(--gold); font-weight: 500; font-size: .95rem; letter-spacing: .25em; text-transform: uppercase; margin-left: 6px; }
+  .brand span:not(.logo) { color: var(--gold); font-weight: 500; font-size: .95rem; letter-spacing: .25em; text-transform: uppercase; margin-left: 6px; }
   .brand, nav { white-space: nowrap; }
+  .brand { display: inline-flex; align-items: center; gap: 10px; }
+  .logo { display: inline-block; flex: none; aspect-ratio: 116 / 221; background: currentColor; -webkit-mask: url("img/logo-olivart-branca.png") center / contain no-repeat; mask: url("img/logo-olivart-branca.png") center / contain no-repeat; }
+  .brand .logo { height: 38px; color: var(--olive); }
+  footer .logo { height: 46px; color: var(--olive); display: block; margin: 0 auto 12px; }
   nav a { text-decoration: none; margin-left: 22px; font-size: .92rem; color: var(--muted); }
   nav a:hover { color: var(--olive); }
-  @media (max-width: 960px) { .brand span, nav .opt-lg { display: none; } nav a { margin-left: 16px; } }
+  @media (max-width: 960px) { .brand span:not(.logo), nav .opt-lg { display: none; } nav a { margin-left: 16px; } }
   @media (max-width: 720px) { nav .opt { display: none; } }
 
   .btn { display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: .95rem; transition: transform .15s, background .15s; }
@@ -135,7 +140,7 @@
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#">Oliv'art <span>Gastronomia</span></a>
+    <a class="brand" href="#"><span class="logo" aria-hidden="true"></span>Oliv'art <span>Gastronomia</span></a>
     <nav>
       <a class="opt" href="#servicos">Serviços</a>
       <a class="opt" href="#cardapios">Cardápios</a>
@@ -512,7 +517,7 @@
 </section>
 
 <footer>
-  <div class="wrap">© 2026 Oliv'art Gastronomia · Chef executivo Gil Oliveira · São Paulo - SP</div>
+  <div class="wrap"><span class="logo" aria-hidden="true"></span>© 2026 Oliv'art Gastronomia · Chef executivo Gil Oliveira · São Paulo - SP</div>
 </footer>
 
 <a class="float" href="https://wa.me/5511953997788?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
